@@ -1,17 +1,18 @@
-import os
+# I added some commentary to the code, but not much, because rest is self explanatory!
+import os #library to clear conlose
 print("Witaj w programie\n\"Kieszonka\"\ndo zarządzania i planowania wydatków i przychodów\n\nMenu:\n 1) Dodaj wypłatę\n 2) Dodaj inny przychód\n 3) Dodaj czynsz mieszkaniowy\n 4) Dodaj jednorazowy wydatek\n 5) Usuń wpis\n 6) Saldo\n 7) Wyjście z programu")
 number = int(input("Podaj numer: "))
 data = open('data.txt', 'r', encoding="utf-8").read().split('\n')
-value = 0
+value = 0 # value is id number for data.txt entries
 for i in data:
         value += 1
-while number != 7:
+while number != 7: #number is option from menu to choose
     if number == 1:
-        os.system("cls")
+        os.system("cls") #Clearing console
         year = int(input("Podaj rok, w którym będzie wypłata: "))
         os.system("cls")
         month = int(input("Podaj miesiąc, w którym będzie wypłata: "))
-        while month < 1 or month > 12:
+        while month < 1 or month > 12: #Checking if month number is valid
             os.system("cls")
             month = int(input("Błędna ilość, podaj jeszcze raz: "))
         os.system("cls")
